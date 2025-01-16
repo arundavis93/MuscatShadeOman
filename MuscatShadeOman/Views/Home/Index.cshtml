@@ -15,10 +15,68 @@
     <link rel="stylesheet" href="~/css/animate.css">
     <link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
     <style>
         ul {
             padding: initial;
             color: #000000;
+        }
+        .float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 200px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+
+        .float1 {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 120px;
+            right: 40px;
+            background-color: #ffffff;
+            color: #337ab7;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+
+        .float2 {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #ffffff;
+            color: #0830f1;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+
+        .my-float {
+            margin-top: 16px;
+        }
+
+        .my-float1 {
+            margin-top: 17px;
+        }
+
+        .my-float2 {
+            margin-top: 17px;
         }
     </style>
 
@@ -27,7 +85,11 @@
 
 <body>
 
-
+    <a href="https://api.whatsapp.com/send?phone=96896590660&text=Hi,&nbsp;I&nbsp;would&nbsp;like&nbsp;to&nbsp;contact." class="float" target="_blank">
+        <i class="fa fa-whatsapp my-float"></i>
+    </a>
+    <a href="mailto:muscatshadeint@gmail.com?subject=Contact from website&body=Hi, I would like to contact." class="float1"> <i class="fa fa-envelope my-float1"></i> </a>
+    <a href="tel:96896590660" class="float2"> <i class="fa fa-phone my-float2"></i> </a>
     <!--POPUP MENU-->
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog" style="background:rgba(0, 0, 0, .7);">
@@ -37,12 +99,11 @@
         <div class="modal-content">
 
             <ul class="pop-menu">
-                <li><a href="#">Home  </a></li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Services </a> </li>
-                <li><a href="#">Projects  </a></li>
-                <!-- <li><a href="#">Faq </a></li>-->
-                <li><a href="#">Reach us </a></li>
+                <li><a href="@Url.Action("Gallery", "Home",new { type = "fabric" })">Fabric Architectures</a></li>
+                <li><a href="@Url.Action("Gallery", "Home",new { type = "steel" })">Steel Structures</a></li>
+                <li><a href="@Url.Action("Gallery", "Home",new { type = "glazing" })">Structural Glazing</a></li>
+                <li><a href="@Url.Action("Gallery", "Home",new { type = "crafting" })">Architectural Metal Crafting</a></li>
+                <li><a href="@Url.Action("Gallery", "Home",new { type = "pergolas" })">Architectural Pergolas</a></li>
             </ul>
         </div>
 
@@ -62,36 +123,48 @@
         <div class="top-menu">
             <div class="wrapper-main-in">
                 <a href="#" class="left-logo">
-                    <img src="~/images/zero-degree/main-logo.png" />
+                    <img src="~/images/main-logo-new.png" />
                 </a>
                 <div class="menu">
                     <ul>
                         <li><a href="#" class="active-menu">Home  </a></li>
-                        <li><a href="#">About Us</a></li>
+                        <li><a href="@Url.Action("AboutUs", "Home")">About Us</a></li>
                         <li class="dropdown1">
                             <a href="#"> Services</a>
                             <div class="dropdown-content1">
                                 <ul>
-                                    <li><a href="#">Shade and structres</a></li>
-                                    <li><a href="#">Aluminium glazing work</a></li>
-                                    <li><a href="#">Steel fabrication</a></li>
-                                    <li><a href="#">S-steel fabrication</a></li>
-                                    <li><a href="#">Shade and structres</a></li>
-                                    <li><a href="#">Aluminium glazing work</a></li>
+                                    <li><a href="@Url.Action("Gallery", "Home",new { type = "fabric" })">Fabric Architectures</a></li>
+                                    <li><a href="@Url.Action("Gallery", "Home",new { type = "steel" })">Steel Structures</a></li>
+                                    <li><a href="@Url.Action("Gallery", "Home",new { type = "glazing" })">Structural Glazing</a></li>
+                                    <li><a href="@Url.Action("Gallery", "Home",new { type = "crafting" })">Architectural Metal Crafting</a></li>
+                                    <li><a href="@Url.Action("Gallery", "Home",new { type = "pergolas" })">Architectural Pergolas</a></li>
+
                                 </ul>
                             </div> <!--sub menu-->
                         </li>
-                        <li><a href="#">Projects  </a></li>
+                        <li class="dropdown1">
+                            <a href="#">Projects  </a>
+                            <div class="dropdown-content1">
+                                <ul>
+                                    <li><a href="@Url.Action("OurProjects", "Home",new { type = "fabric" })">Fabric Architectures</a></li>
+                                    <li><a href="@Url.Action("OurProjects", "Home",new { type = "steel" })">Steel Structures</a></li>
+                                    <li><a href="@Url.Action("OurProjects", "Home",new { type = "glazing" })">Structural Glazing</a></li>
+                                    <li><a href="@Url.Action("OurProjects", "Home",new { type = "crafting" })">Architectural Metal Crafting</a></li>
+                                    <li><a href="@Url.Action("OurProjects", "Home",new { type = "pergolas" })">Architectural Pergolas</a></li>
+
+                                </ul>
+                            </div> <!--sub menu-->
+                        </li>
                         <!--
                         <li><a href="contact.php">Faq </a></li>-->
-                        <li><a href="#">Reach us </a></li>
+                        @*<li><a href="#">Reach us </a></li>*@
                     </ul>
                 </div> <!--menu-->
 
                 <div class="contact-top-menu">
-                    <a class="phone-number">+968 95320008</a>
-                    <a class="phone-number">+96879573230</a>
-                    <a class="email-top">muscatshadeint@gmail.com</a>
+                    <a href="tel:+96894042424" class="phone-number">+968 94042424</a>
+                    <a href="tel:+96895320008" class="phone-number second-phone">+968 95320008</a>
+                    <a href="mailto:muscatshadeint@gmail.com?Subject=Request%20from%20website" class="email-top">muscatshadeint@gmail.com</a>
                 </div> <!--contact top menu-->
                 <div class="res-menu" data-toggle="modal" data-target="#myModal">
                     <img src="~/images/right-menu.png" />
@@ -130,7 +203,7 @@
                                     </ul>
                                 </div>
                             </content>
-                            <div class="wrapper-main"><a href="#" class="go-btn">Explore </a></div>
+                            <div class="wrapper-main"><a href="@Url.Action("Gallery", "Home",new { type = "fabric" })" class="go-btn">Explore </a></div>
                         </div>
                     </div>
                 </div>   <!--section11-->
@@ -173,7 +246,7 @@
                                 </div>
                             </content>
 
-                            <div class="wrapper-main"><a href="#" class="go-btn">Explore </a></div>
+                            <div class="wrapper-main"><a href="@Url.Action("Gallery", "Home",new { type = "steel" })" class="go-btn">Explore </a></div>
                         </div>
                     </div>
                 </div>   <!--section11-->
@@ -198,7 +271,7 @@
                             weight. The wall transfers lateral wind loads that are incident upon it to the main building structure
                             through connections at floors or columns of the building.
                         </p>
-                        <div class="wrapper-main"><a href="#" class="go-btn">Explore </a></div>
+                        <div class="wrapper-main"><a href="@Url.Action("Gallery", "Home",new { type = "glazing" })" class="go-btn">Explore </a></div>
                     </div>
                 </div>
             </div>
@@ -222,7 +295,7 @@
                             that is yearning for designs to fulfill your every dream and desire. Behind a sun awning, beneath
                             a pergola or shade sail, life is free to expand into comfort and beauty.
                         </p>
-                        <div class="wrapper-main"><a href="#" class="go-btn">Explore</a></div>
+                        <div class="wrapper-main"><a href="@Url.Action("Gallery", "Home",new { type = "pergolas" })" class="go-btn">Explore</a></div>
                     </div>
                 </div>
             </div>
@@ -241,7 +314,7 @@
                             Stainless Steel Railings & Interiors Design. Our products are broadly recognized for their
                             aesthetic construction, durable finish, sturdy designs, and wear & corrosion resistance.
                         </p>
-                        <div class="wrapper-main"><a href="#" class="go-btn">Explore</a></div>
+                        <div class="wrapper-main"><a href="@Url.Action("Gallery", "Home",new { type = "crafting" })" class="go-btn">Explore</a></div>
                     </div>
                 </div>
             </div>
@@ -280,29 +353,29 @@
     <script src="~/js/bootstrap.min.js"></script>
 
     <script type="text/javascript">
-		$(document).ready(function() {
-			$('#fullpage').fullpage({
-				anchors: ['firstPage', 'secondPage', '3rdPage'],
-				sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
-				navigation: true,
-				navigationPosition: 'right',
-				 loopHorizontal: true,
-				 scrollingSpeed: 1000,
-            autoScrolling: true,
-            fitToSection: true,
-            fitToSectionDelay: 1000,
-            easing: 'easeInOutCubic',
-            easingcss3: 'ease',
-            loopBottom: false,
-            loopTop: false,
-			 continuousVertical: true,
-			  paddingTop: 0,
-            paddingBottom: 0,
-			css3: true,
-				//navigationTooltips: ['First page', 'Second page', 'Third and last page']
+        $(document).ready(function () {
+            $('#fullpage').fullpage({
+                anchors: ['firstPage', 'secondPage', '3rdPage'],
+                sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+                navigation: true,
+                navigationPosition: 'right',
+                loopHorizontal: true,
+                scrollingSpeed: 1000,
+                autoScrolling: true,
+                fitToSection: true,
+                fitToSectionDelay: 1000,
+                easing: 'easeInOutCubic',
+                easingcss3: 'ease',
+                loopBottom: false,
+                loopTop: false,
+                continuousVertical: true,
+                paddingTop: 0,
+                paddingBottom: 0,
+                css3: true,
+                //navigationTooltips: ['First page', 'Second page', 'Third and last page']
 
-					});
-			});
+            });
+        });
     </script>
 
 

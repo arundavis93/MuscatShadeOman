@@ -1,0 +1,173 @@
+﻿
+@{
+    Layout = null;
+    @model MuscatShadeOman.Models.ViewModels.ImageDetails
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/css/bootstrap.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width" />
+    <title>RemoveProjectsImage</title>
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/css/jquery.fullPage.css" />
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        ul {
+            padding: initial;
+            color: #000000;
+        }
+
+        .dropdown-content1 {
+            bottom: -116px !important;
+        }
+
+        .form-horizontal {
+            margin: 100px;
+        }
+
+        textarea {
+            height: 150px !important;
+        }
+
+        #dataTable {
+            margin-top: 150px;
+        }
+
+        #typeFilter {
+            width: 20%;
+            float: right;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!--menu start-->
+    <div class="wrapper-main position-relative">
+
+        <div class="top-menu">
+            <div class="wrapper-main-in">
+                <a href="#" class="left-logo">
+                    <img src="~/images/main-logo.png" />
+                </a>
+                <div class="menu">
+                    <ul>
+                        <li><a href="@Url.Action("Index", "Admin")" class="active-menu">Home</a></li>
+                        
+                        <li class="dropdown1">
+                            <a href="#">Services</a>
+                            <div class="dropdown-content1">
+                                <ul>
+                                    <li><a href="@Url.Action("ChangeServicesContent", "Admin")">Change content</a></li>
+                                    <li><a href="@Url.Action("AddServicesImage", "Admin")">Add image</a></li>
+                                    <li><a href="@Url.Action("RemoveServicesImage", "Admin")">Delete image</a></li>
+
+                                </ul>
+                            </div> <!--sub menu-->
+                        </li>
+                        <li class="dropdown1">
+                            <a href="#">Projects  </a>
+                            <div class="dropdown-content1">
+                                <ul>
+                                    <li><a href="@Url.Action("ChangeProjectsContent", "Admin")">Change content</a></li>
+                                    <li><a href="@Url.Action("AddProjectsImage", "Admin")">Add image</a></li>
+                                    <li><a href="@Url.Action("RemoveProjectsImage", "Admin")">Delete image</a></li>
+
+                                </ul>
+                            </div> <!--sub menu-->
+                        </li>
+                        <li><a href="@Url.Action("Logout", "Admin")">Logout</a></li>
+
+                    </ul>
+                </div> <!--menu-->
+                @*<div class="contact-top-menu">
+                        <a href="tel:+968 95320008" class="phone-number">+968 95320008</a>
+                        <a href="tel:+96879573230" class="phone-number second-phone">+96879573230</a>
+                        <a href="mailto:muscatshadeint@gmail.com?Subject=Request%20from%20website" class="email-top">muscatshadeint@gmail.com</a>
+                    </div> <!--contact top menu-->
+                    <div class="res-menu" data-toggle="modal" data-target="#myModal">
+                        <img src="~/images/right-menu.png" />
+                    </div> <!--right-->*@
+
+            </div>  <!--main in-->
+        </div>
+    </div>
+    <!--menu end-->
+    <div id="dataTable">
+        @*<div>
+                <label style="margin-left:75%">Filter : </label>
+                <select id="typeFilter" class="form-control" onchange="filterData()">
+                    <option id="defaultText">Select type</option>
+                    @{
+                        foreach (var item in Model.galleryImageList.Select(i => i.Type).Distinct())
+                        {
+                            <option id="@item" value="@item">@item</option>
+                        }
+                    }
+
+                </select>
+            </div>*@
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Delete</th>
+                </tr>
+            </thead>
+            <tbody id="dataRow">
+                @{
+                    foreach (var item in Model.projectImageList)
+                    {
+                        <tr class="@item.Type">
+                            <th scope="row">@item.ID</th>
+                            <td>@item.Type</td>
+                            <td>@item.ImageName</td>
+                            <td><a href="@item.ImagePath"><img src="@item.ImagePath" style="height:100px;width:150px" /></a></td>
+                            <td><a href="deleteImageFromProject?id=@item.ID">Delete</a></td>
+                        </tr>
+                    }
+                }
+
+
+            </tbody>
+        </table>
+        @{
+            if (ViewBag.deleteSuccess != null && ViewBag.deleteSuccess)
+            {
+                Response.Write("<script>alert('Deleted Successfully')</script>");
+            }
+        }
+    </div>
+    <script src="~/js/jquery-1.11.1.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+    @*<script type="text/javascript">
+            function filterData()
+            {
+                var filterOb = document.getElementById("typeFilter");
+                var filterValue = filterOb.selectedOptions[0].value;
+                //var table = document.getElementsByClassName("table");
+                var trows = document.getElementById('dataRow');
+                var filterContent = document.getElementsByClassName(filterValue);
+                var filterRow = filterContent[0];
+                trows.innerHTML = filterRow;
+            // Loop through all table rows, and hide those who don't match the search query
+            for (i = 0; i < tr.length; i++) {
+                td = tr[i].getElementsByTagName("td")[0];
+                if (td) {
+                    var txtValue = td.textContent || td.innerText;
+                    if (txtValue.toUpperCase().indexOf(filterValue) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none";
+                    }
+                }
+            }
+            }
+        </script>*@
+</body>
+</html>

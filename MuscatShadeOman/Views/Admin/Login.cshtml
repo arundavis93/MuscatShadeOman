@@ -1,0 +1,32 @@
+﻿
+@{
+    Layout = null;
+}
+
+<link href="~/css/bootstrap.min.css" rel="stylesheet" />
+<script src="~/js/jquery-1.11.1.min.js"></script>
+<script src="~/js/bootstrap.min.js"></script>
+<link href="~/css/style.css" rel="stylesheet" />
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+</head>
+<body style="background-color:black!important">
+    <form id="loginform" action="@Url.Action("Login", "Admin")" method="post">
+        <div style="margin:10%">
+            <label style="color:white;font-size:large">Welcome Admin</label>
+            <br />
+            <label style="color:white">Username</label>&nbsp;&nbsp;&nbsp;
+            <input type="text" id="txtuser" name="txtuser" required/>
+            <br />
+            <label style="color:white">Password</label>&nbsp;&nbsp;&nbsp;
+            <input type="password" id="txtpass" name="txtpass" required/>
+            <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <input type="submit" id="btnlogin" name="btnlogin" value="Login" />
+        </div>
+    </form>
+</body>
+</html>

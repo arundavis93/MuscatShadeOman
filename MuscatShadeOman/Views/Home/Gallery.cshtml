@@ -1,0 +1,434 @@
+﻿
+@{
+    Layout = null;
+    @model MuscatShadeOman.Models.ViewModels.ImageDetails
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Muscat Shade Oman</title>
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/css/jquery.fullPage.css" />
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        ul {
+            padding: initial;
+            color: #000000;
+        }
+        .hoarding-img{
+            margin-top:100px;
+        }
+
+        .float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 200px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+
+        .float1 {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 120px;
+            right: 40px;
+            background-color: #ffffff;
+            color: #337ab7;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+
+        .float2 {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #ffffff;
+            color: #0830f1;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+
+        .my-float {
+            margin-top: 16px;
+        }
+
+        .my-float1 {
+            margin-top: 17px;
+        }
+
+        .my-float2 {
+            margin-top: 17px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <a href="https://api.whatsapp.com/send?phone=96896590660&text=Hi,&nbsp;I&nbsp;would&nbsp;like&nbsp;to&nbsp;contact." class="float" target="_blank">
+        <i class="fa fa-whatsapp my-float"></i>
+    </a>
+    <a href="mailto:muscatshadeint@gmail.com?subject=Contact from website&body=Hi, I would like to contact." class="float1"> <i class="fa fa-envelope my-float1"></i> </a>
+    <a href="tel:96896590660" class="float2"> <i class="fa fa-phone my-float2"></i> </a>
+
+    <!--POPUP MENU-->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog" style="background:rgba(0, 0, 0, .7);">
+        <button type="button" class="close close-new" data-dismiss="modal"> <img src="~/images/close_button.png" /></button>
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <ul class="pop-menu">
+                <li><a href="@Url.Action("Gallery", "Home", new { type = "fabric" })">Fabric Architectures</a></li>
+                <li><a href="@Url.Action("Gallery", "Home", new { type = "steel" })">Steel Structures</a></li>
+                <li><a href="@Url.Action("Gallery", "Home", new { type = "glazing" })">Structural Glazing</a></li>
+                <li><a href="@Url.Action("Gallery", "Home", new { type = "crafting" })">Architectural Metal Crafting</a></li>
+                <li><a href="@Url.Action("Gallery", "Home", new { type = "pergolas" })">Architectural Pergolas</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!--POPUP MENU-->
+
+
+
+
+
+
+
+
+    <div class="wrapper-main position-relative">
+
+        <div class="top-menu">
+            <div class="wrapper-main-in">
+                <a href="#" class="left-logo">
+                    <img src="~/images/main-logo-new.png" />
+                </a>
+                <div class="menu">
+                    <ul>
+                        <li><a href="@Url.Action("Index", "Home")">Home  </a></li>
+                        <li><a href="@Url.Action("AboutUs", "Home")">About Us</a></li>
+                        <li class="dropdown1">
+                            <a href="#" class="active-menu"> Services</a>
+                            <div class="dropdown-content1">
+                                <ul>
+                                    <li><a href="@Url.Action("Gallery", "Home", new { type = "fabric" })">Fabric Architectures</a></li>
+                                    <li><a href="@Url.Action("Gallery", "Home", new { type = "steel" })">Steel Structures</a></li>
+                                    <li><a href="@Url.Action("Gallery", "Home", new { type = "glazing" })">Structural Glazing</a></li>
+                                    <li><a href="@Url.Action("Gallery", "Home", new { type = "crafting" })">Architectural Metal Crafting</a></li>
+                                    <li><a href="@Url.Action("Gallery", "Home", new { type = "pergolas" })">Architectural Pergolas</a></li>
+
+                                </ul>
+                            </div> <!--sub menu-->
+                        </li>
+                        <li class="dropdown1">
+                            <a href="#">Projects  </a>
+                            <div class="dropdown-content1">
+                                <ul>
+                                    <li><a href="@Url.Action("OurProjects", "Home", new { type = "fabric" })">Fabric Architectures</a></li>
+                                    <li><a href="@Url.Action("OurProjects", "Home", new { type = "steel" })">Steel Structures</a></li>
+                                    <li><a href="@Url.Action("OurProjects", "Home", new { type = "glazing" })">Structural Glazing</a></li>
+                                    <li><a href="@Url.Action("OurProjects", "Home", new { type = "crafting" })">Architectural Metal Crafting</a></li>
+                                    <li><a href="@Url.Action("OurProjects", "Home", new { type = "pergolas" })">Architectural Pergolas</a></li>
+
+                                </ul>
+                            </div> <!--sub menu-->
+                        </li>
+                        <!--
+                        <li><a href="contact.php">Faq </a></li>-->
+                        @*<li><a href="#">Reach us </a></li>*@
+                    </ul>
+                </div> <!--menu-->
+
+                <div class="contact-top-menu">
+                    <a href="tel:+96894042424" class="phone-number">+968 94042424</a>
+                    <a href="tel:+96895320008" class="phone-number second-phone">+968 95320008</a>
+                    <a href="mailto:muscatshadeint@gmail.com?Subject=Request%20from%20website" class="email-top">muscatshadeint@gmail.com</a>
+                </div> <!--contact top menu-->
+                <div class="res-menu" data-toggle="modal" data-target="#myModal">
+                    <img src="~/images/right-menu.png" />
+                </div> <!--right-->
+
+            </div>  <!--main in-->
+        </div>
+    </div>  <!--main-->
+
+
+
+
+    @{
+
+        <div class="wrapper-main-top">
+            <div class="left-section padding-right-left-35" style="overflow-y:scroll">
+                <div class="wrapper-main media-hover-padding wow fadeInDown" data-wow-delay="1s">
+                    <span class="sub-head media-top-head">
+                        @Model.Title
+                    </span>
+
+                    @*<div class="wrapper-main text-center"><a href="javascript:void(0);" class="contact-btn" data-toggle="modal" data-target="#contact-me">contact me</a></div>*@
+                </div>
+
+
+                <p class="text-sub margin-bottom-15">
+                    @Model.ParagraphContent
+                </p>
+            </div> <!--left-->
+
+            <div class="right-section">
+                <div class="wrapper_main">
+                    <div class="customNavigation">
+                        @*<a class="btn prev"> <img src="~/images/left-arrow.jpg" /> </a>
+                            <a class="btn next"> <img src="~/images/right-arrow.jpg" /> </a>*@
+                    </div>
+                </div>
+                @{
+                    foreach (var imageItem in Model.galleryImageList)
+                    {
+                        <div class="hoarding-img">
+
+                            <a href="" data-value="@imageItem.ImagePath" data-toggle="modal" data-target="#myModal1" onclick="showModal(this.getAttribute('data-value'))">
+                                <img src="@imageItem.ImagePath" style="width:100%;height:312px" />
+                            </a>
+                        </div>
+                    }
+
+                }
+                <div class="modal fade" id="myModal1" role="dialog">
+                    <div class="modal-dialog">
+
+                        <div class="modal-content">
+                            @*<div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    <h4 class="modal-title">Modal Header</h4>
+                                </div>
+                                <div class="modal-body">
+                                    <p>Some text in the modal.</p>
+                                </div>*@
+                            <img id="modalimage" style="width:100%;height:500px" />
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div> <!--right-->
+
+        </div>
+
+    }
+
+
+
+
+    <div class="footer-menu">
+        <div class="wrapper-main-in">
+            <div class="wrapper-main">
+                <div class="social-icon-main">
+                    <span class="follow-us"> Follow us </span>
+                    <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                </div>
+                @*<div class="footer-menu-bottom">
+                    <ul>
+                        <li><a>Muscat</a></li>
+                        <li><a>Dubai</a>  </li>*@
+                <!--<li><a>karnataka</a> </li>
+                <li><a>telangana</a>     </li>
+                <li><a> andhra pradesh</a>     </li>
+                <li><a> maharashtra</a>  </li>-->
+                @*</ul>
+                    </div>*@
+            </div> <!--main-->
+        </div> <!--footer menu-->
+    </div> <!--bottom section-->
+
+
+    <script src="~/js/jquery-1.11.1.min.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+
+    <script>
+        (function ($) {
+            $(document).on('contextmenu', 'img', function () {
+                return false;
+            })
+        })(jQuery);
+    </script>
+    <script>
+        function showModal(data) {
+            //you can do anything with data, or pass more data to this function. i set this data to modal header for example
+            $("#myModal .modal-title").html(data)
+            $("#modalimage").attr('src', data)
+            //$("#myModal1").modal();
+        }
+    </script>
+
+    @*<script type="text/javascript" src="~/js/jquery.validate.min.js"></script>*@
+
+    @*<script src="~/js/wow.min.js"></script>*@
+
+    @*<script>
+            wow = new WOW({
+                animateClass: 'animated',
+                offset: 50,
+                callback: function (box) {
+                    console.log("WOW: animating <" + box.tagName.toLowerCase() + ">")
+                }
+            });
+            wow.init();
+            document.getElementById('moar').onclick = function () {
+                var section = document.createElement('section');
+                section.className = 'section--purple wow fadeInDown';
+                this.parentNode.insertBefore(section, this);
+            };
+        </script>*@
+
+    @*<script>
+            $(document).ready(function () {
+
+                $("#owl-demo").owlCarousel({
+
+                    autoPlay: 3000, //Set AutoPlay to 3 seconds
+
+                    items: 1,
+                    itemsDesktop: [1199, 1],
+                    itemsDesktopSmall: [979, 1],
+                });
+
+                var owl = $("#owl-demo");
+                owl.owlCarousel();
+                // Custom Navigation Events
+                $(".next").click(function () {
+                    owl.trigger('owl.next');
+                })
+                $(".prev").click(function () {
+                    owl.trigger('owl.prev');
+                })
+
+            });
+
+        </script>*@
+
+
+    @*<script src="~/js/owl.carousel.js"></script>*@
+    <!--image light box-->
+    @*<script src="~/js/jquery.littlelightbox.js"></script>
+        <script>
+            $('.lightbox').littleLightBox();
+        </script>*@
+    <!--image light box-->
+    <!--POPUP contact me-->
+    <!-- Modal -->
+    <!--POPUP contact me-->
+    @*<script type="text/javascript">
+
+            (function ($, W, D) {
+                var JQUERY4U = {};
+                JQUERY4U.UTIL =
+                        {
+                            setupFormValidation: function () {
+                                //form validation rules
+                                $("#contact_innerus_form").validate({
+                                    rules: {
+                                        frm_email: {
+                                            required: true,
+                                            email: true
+                                        },
+                                        frm_name: {
+                                            required: true
+                                        }
+                                        ,
+                                        frm_branding: {
+                                            required: true
+                                        }
+                                        ,
+                                        frm_message: {
+                                            required: true
+                                        },
+                                    },
+                                    messages: {
+                                    },
+                                    submitHandler: function (form) {
+
+                                        // form.submit();
+
+                                        /*start*/
+
+
+                                        var email = $("#frm_email").val();
+                                        var name = $("#frm_name").val();
+                                        var frm_branding = $("#frm_branding").val();
+                                        var comments = $("#frm_message").val();
+                                        var frm_url = $("#frm_url").val();
+
+
+
+                                        /*  var base_url = 'http://innowire.in/';*/
+
+                                        var dataString = 'email=' + email + '&name=' + name + '&frm_branding=' + frm_branding + '&comments=' + comments + '&frm_url=' + frm_url;
+
+                                        request = $.ajax({
+                                            type: "POST",
+                                            url: "page/contact_in_email.php",
+                                            data: dataString,
+                                            cache: false,
+                                            success: function (html) {
+
+
+                                                $('.alertmessage').html(html);
+                                                $('.alert').show();
+
+                                                $("#frm_email").val('');
+                                                $("#frm_name").val('');
+                                                $("#frm_message").val('');
+
+
+                                            }
+                                        });
+
+
+
+
+
+                                        /*end*/
+
+
+
+                                    }
+                                });
+                            }
+                        }
+                //when the dom has loaded setup form validation rules
+                $(D).ready(function ($) {
+                    JQUERY4U.UTIL.setupFormValidation();
+                });
+            })(jQuery, window, document);
+        </script>*@
+</body>
+</html>
+

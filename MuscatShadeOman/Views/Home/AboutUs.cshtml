@@ -1,0 +1,289 @@
+﻿
+@{
+    Layout = null;
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Muscat Shade Oman</title>
+    <link href="~/css/style.css" rel="stylesheet" />
+    @*<link rel="stylesheet" type="text/css" href="~/css/jquery.fullPage.css" />*@
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        ul {
+            padding: initial;
+            color: #000000;
+        }
+        .siit_inner_contentwrap p {
+    font-family: sans-serif!important;
+    font-size: 15px!important;
+    text-align: center;
+    line-height: 20px;
+    width: 100%;
+    line-height: 20px;
+    color: white!important;
+}
+        .margin-top-30 {
+    margin-top: 5px!important;
+}
+
+        .float {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 200px;
+            right: 40px;
+            background-color: #25d366;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+
+        .float1 {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 120px;
+            right: 40px;
+            background-color: #ffffff;
+            color: #337ab7;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+
+        .float2 {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 40px;
+            right: 40px;
+            background-color: #ffffff;
+            color: #0830f1;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 2px 2px 3px #999;
+            z-index: 100;
+        }
+
+        .my-float {
+            margin-top: 16px;
+        }
+
+        .my-float1 {
+            margin-top: 17px;
+        }
+
+        .my-float2 {
+            margin-top: 17px;
+        }
+    </style>
+
+</head>
+
+
+<body>
+    <a href="https://api.whatsapp.com/send?phone=96896590660&text=Hi,&nbsp;I&nbsp;would&nbsp;like&nbsp;to&nbsp;contact." class="float" target="_blank">
+        <i class="fa fa-whatsapp my-float"></i>
+    </a>
+    <a href="mailto:muscatshadeint@gmail.com?subject=Contact from website&body=Hi, I would like to contact." class="float1"> <i class="fa fa-envelope my-float1"></i> </a>
+    <a href="tel:96896590660" class="float2"> <i class="fa fa-phone my-float2"></i> </a>
+
+    <!--POPUP MENU-->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog" style="background:rgba(0, 0, 0, .7);">
+        <button type="button" class="close close-new" data-dismiss="modal"> <img src="~/images/close_button.png" /></button>
+
+        <!-- Modal content-->
+        <div class="modal-content">
+
+            <ul class="pop-menu">
+                <li><a href="@Url.Action("Gallery", "Home",new { type = "fabric" })">Fabric Architectures</a></li>
+                <li><a href="@Url.Action("Gallery", "Home",new { type = "steel" })">Steel Structures</a></li>
+                <li><a href="@Url.Action("Gallery", "Home",new { type = "glazing" })">Structural Glazing</a></li>
+                <li><a href="@Url.Action("Gallery", "Home",new { type = "crafting" })">Architectural Metal Crafting</a></li>
+                <li><a href="@Url.Action("Gallery", "Home",new { type = "pergolas" })">Architectural Pergolas</a></li>
+            </ul>
+        </div>
+
+    </div>
+
+    <!--POPUP MENU-->
+
+
+
+
+
+
+
+
+    <div class="wrapper-main position-relative">
+
+        <div class="top-menu">
+            <div class="wrapper-main-in">
+                <a href="#" class="left-logo">
+                    <img src="~/images/main-logo-new.png" />
+                </a>
+                <div class="menu">
+                    <ul>
+                        <li><a href="@Url.Action("Index", "Home")">Home  </a></li>
+                        <li><a href="#" class="active-menu">About Us</a></li>
+                        <li class="dropdown1">
+                            <a href="#"> Services</a>
+                            <div class="dropdown-content1">
+                                <ul>
+                                    <li><a href="@Url.Action("Gallery", "Home",new { type = "fabric" })">Fabric Architectures</a></li>
+                                    <li><a href="@Url.Action("Gallery", "Home",new { type = "steel" })">Steel Structures</a></li>
+                                    <li><a href="@Url.Action("Gallery", "Home",new { type = "glazing" })">Structural Glazing</a></li>
+                                    <li><a href="@Url.Action("Gallery", "Home",new { type = "crafting" })">Architectural Metal Crafting</a></li>
+                                    <li><a href="@Url.Action("Gallery", "Home",new { type = "pergolas" })">Architectural Pergolas</a></li>
+
+                                </ul>
+                            </div> <!--sub menu-->
+                        </li>
+                        <li class="dropdown1">
+                            <a href="#">Projects  </a>
+                            <div class="dropdown-content1">
+                                <ul>
+                                    <li><a href="@Url.Action("OurProjects", "Home",new { type = "fabric" })">Fabric Architectures</a></li>
+                                    <li><a href="@Url.Action("OurProjects", "Home",new { type = "steel" })">Steel Structures</a></li>
+                                    <li><a href="@Url.Action("OurProjects", "Home",new { type = "glazing" })">Structural Glazing</a></li>
+                                    <li><a href="@Url.Action("OurProjects", "Home",new { type = "crafting" })">Architectural Metal Crafting</a></li>
+                                    <li><a href="@Url.Action("OurProjects", "Home",new { type = "pergolas" })">Architectural Pergolas</a></li>
+
+                                </ul>
+                            </div> <!--sub menu-->
+                        </li>
+                        <!--
+                        <li><a href="contact.php">Faq </a></li>-->
+                        @*<li><a href="#">Reach us </a></li>*@
+                    </ul>
+                </div> <!--menu-->
+
+                <div class="contact-top-menu">
+                    <a href="tel:+96894042424" class="phone-number">+968 94042424</a>
+                    <a href="tel:+96895320008" class="phone-number second-phone">+968 95320008</a>
+                    <a href="mailto:muscatshadeint@gmail.com?Subject=Request%20from%20website" class="email-top">muscatshadeint@gmail.com</a>
+                </div> <!--contact top menu-->
+                <div class="res-menu" data-toggle="modal" data-target="#myModal">
+                    <img src="~/images/right-menu.png" />
+                </div> <!--right-->
+
+            </div>  <!--main in-->
+        </div>
+    </div>  <!--main-->
+
+
+
+
+
+
+
+
+    <div id="fullpage">
+
+
+        <div class="section" id="section1">
+            <div class="main-img" style="background:url(../images/About-us-image.jpg);background-size:cover"></div>
+
+            <div class="bg-left wow slideInLeft" data-wow-delay="1.5s" style="visibility: visible; animation-delay: 1.5s; animation-name: slideInLeft;">
+                <!--<img src="images/zero-degree/about-text.png" />-->
+                <div class="siit_inner_contentwrap siit_cont_left" style="background-color:#00000000">
+                    <div class="about-main-in margin-top-30"> <img src="~/images/about-icon.png"> </div>
+                    <h2 class="siit_inr_cont_hd" style="color:white"> <span class="siit_inr_cont_hd_ico"></span> About us </h2>
+                    <div id="content-2" class="wow fadeInUp  mCustomScrollbar innerpg_scrwrap _mCS_1" data-wow-delay="0.5s" style="visibility: visible; animation-delay: 0.5s; animation-name: fadeInUp;">
+                        <div id="mCSB_1" class="mCustomScrollBox mCS-light mCSB_vertical mCSB_inside" style="max-height: 230px;" tabindex="0">
+                            <div id="mCSB_1_container" class="mCSB_container" style="position: relative; top: -9px; left: 0px;" dir="ltr">
+                                <p>
+                                    We at MUSCAT SHADE INTERNATIONAL LLC take pride in introducing our selves as one of the outstanding Structure Steel Fabricators and Erectors, with an excellent track record for the best customer satisfaction since1998. We consider the service provided by uses of utmost importance in the successful growth of the company. We take earnest efforts in providing our customers not only with quality products at competitive rates, but also ensure that the projects are completed on schedule
+                                    Our qualified and experienced personals provide our clients with the optimum designs that suit their purpose best.
+                                </p><p>
+                                    The designs produced at MUSCAT SHADE care based on engineering analysis and in anticipation of future problems that may occur, thereby preventing them. With the well experienced technical staff and finest machinery we fabricate and erect these designs precisely to the specifications with supreme finish. We fabricate steel projects of all volumes such as commercial constructions, residential projects and industrial projects along with general works in Mild steel, Stainless steel, Aluminium &Glass as per the provided specifications.
+
+                                </p>
+                            </div><div id="mCSB_1_scrollbar_vertical" class="mCSB_scrollTools mCSB_1_scrollbar mCS-light mCSB_scrollTools_vertical" style="display: block;"><div class="mCSB_draggerContainer"><div id="mCSB_1_dragger_vertical" class="mCSB_dragger" style="position: absolute; min-height: 30px; display: block; height: 104px; max-height: 220px; top: 0px;"><div class="mCSB_dragger_bar" style="line-height: 30px;"></div></div><div class="mCSB_draggerRail"></div></div></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>  <!--section2-->
+
+
+
+
+
+
+
+
+    </div>
+
+
+
+
+    <div class="footer-menu">
+        <div class="wrapper-main-in">
+            <div class="wrapper-main">
+                <div class="social-icon-main">
+                    <span class="follow-us"> Follow us </span>
+                    <a href="#"><i class="fa fa-facebook-square" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                    <a href="#"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                </div>
+                <div class="footer-menu-bottom">
+                    <ul>
+                        <li><a>Muscat</a></li>
+                        <li><a>Dubai</a>  </li>
+
+                    </ul>
+                </div>
+            </div> <!--main-->
+        </div> <!--footer menu-->
+    </div> <!--bottom section-->
+
+    <script src="~/js/jquery-1.11.1.min.js"></script>
+
+    <script type="text/javascript" src="~/js/jquery.fullPage.js"></script>
+    <script src="~/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#fullpage').fullpage({
+                anchors: ['firstPage', 'secondPage', '3rdPage'],
+                sectionsColor: ['#C63D0F', '#1BBC9B', '#7E8F7C'],
+                navigation: true,
+                navigationPosition: 'right',
+                loopHorizontal: true,
+                scrollingSpeed: 1000,
+                autoScrolling: true,
+                fitToSection: true,
+                fitToSectionDelay: 1000,
+                easing: 'easeInOutCubic',
+                easingcss3: 'ease',
+                loopBottom: false,
+                loopTop: false,
+                continuousVertical: true,
+                paddingTop: 0,
+                paddingBottom: 0,
+                css3: true,
+                //navigationTooltips: ['First page', 'Second page', 'Third and last page']
+
+            });
+        });
+    </script>
+
+
+</body>
+</html>

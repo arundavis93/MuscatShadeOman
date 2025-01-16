@@ -1,0 +1,88 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="~/css/jquery.fullPage.css" />
+    <link rel="stylesheet" href="~/css/animate.css">
+    <link rel="stylesheet" type="text/css" href="~/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <style>
+        ul {
+            padding: initial;
+            color: #000000;
+        }
+        .dropdown-content1{
+            bottom:-116px!important;
+        }
+        #welcomelabel{
+            margin-top:100px;
+            margin-left:10px;
+        }
+    </style>
+</head>
+<body>
+    <!--menu start-->
+    <div class="wrapper-main position-relative">
+
+        <div class="top-menu">
+            <div class="wrapper-main-in">
+                <a href="#" class="left-logo">
+                    <img src="~/images/main-logo.png" />
+                </a>
+                <div class="menu">
+                    <ul>
+                        <li><a href="@Url.Action("Index", "Admin")" class="active-menu">Home</a></li>
+                        
+                        <li class="dropdown1">
+                            <a href="#">Services</a>
+                            <div class="dropdown-content1">
+                                <ul>
+                                    <li><a href="@Url.Action("ChangeServicesContent", "Admin")">Change content</a></li>
+                                    <li><a href="@Url.Action("AddServicesImage", "Admin")">Add image</a></li>
+                                    <li><a href="@Url.Action("RemoveServicesImage", "Admin")">Delete image</a></li>
+
+                                </ul>
+                            </div> <!--sub menu-->
+                        </li>
+                        <li class="dropdown1">
+                            <a href="#">Projects  </a>
+                            <div class="dropdown-content1">
+                                <ul>
+                                    <li><a href="@Url.Action("ChangeProjectsContent", "Admin")">Change content</a></li>
+                                    <li><a href="@Url.Action("AddProjectsImage", "Admin")">Add image</a></li>
+                                    <li><a href="@Url.Action("RemoveProjectsImage", "Admin")">Delete image</a></li>
+
+                                </ul>
+                            </div> <!--sub menu-->
+                        </li>
+                        <li><a href="@Url.Action("Logout", "Admin")">Logout</a></li>
+
+                    </ul>
+                </div> <!--menu-->
+
+                @*<div class="contact-top-menu">
+                    <a href="tel:+968 95320008" class="phone-number">+968 95320008</a>
+                    <a href="tel:+96879573230" class="phone-number second-phone">+96879573230</a>
+                    <a href="mailto:muscatshadeint@gmail.com?Subject=Request%20from%20website" class="email-top">muscatshadeint@gmail.com</a>
+                </div> <!--contact top menu-->
+                <div class="res-menu" data-toggle="modal" data-target="#myModal">
+                    <img src="~/images/right-menu.png" />
+                </div> <!--right-->*@
+
+            </div>  <!--main in-->
+        </div>
+    </div>
+    <!--menu end-->
+    <div id="welcomelabel" class="form-horizontal">
+        <label style="font-size:large;color:blue">Welcome Admin</label>
+    </div>
+</body>
+</html>
